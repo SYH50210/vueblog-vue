@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var objEs5 = {
+            data: ['张三丰', '张无忌'],
+            init: function () {
+                document.onclick = function () {
+                    console.log('objEs5：', this)
+                    console.log('objEs5：', this.data)
+                }
+            }
+        }
+        objEs5.init();
+        
+        var objEs6 = {
+            data: ['张三丰', '张无忌'],
+            init: function () {
+                //箭头函数不会改变this关键字的指向
+                document.onclick = () => {
+                    console.log('objEs6：', this);
+                    console.log('objEs6：', this.data);
+                }
+            }
+        }
+        objEs6.init();
+        
+        </script>
+</head>
+<body>
+    
+</body>
+
+</html>
